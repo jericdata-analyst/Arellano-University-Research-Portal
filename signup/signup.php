@@ -42,15 +42,17 @@ if(isset($_POST['btnsubmit']))
                 'cost' => 12,];
                 $hash_pass = password_hash("$password", PASSWORD_BCRYPT, $options);
                 //insert to db
-                $query = "INSERT INTO tblaccount VALUES ('','$name', '$username','$hash_pass','$email', 'Inactive', 'User','No','','')";
+                $query = "INSERT INTO tblaccount VALUES ('','$name', '$username','$hash_pass','$email', 'Unsubscribe', 'User','No','','')";
                 if(mysqli_query($connect, $query))
                 {
-                    echo "<script>alert('New account $username has successfully added.' );</script>";
-                    header("Location: ../index.php");
+                  $_SESSION['success_message'] = "Account Created successfully.";
+                    header("Location: ../signup/signup.php");
+                    exit();
+                    
                 }
                 else
                 {
-                    echo "<script>alert('Error in creating new account.');</script>";
+                  echo "Server problem, Try after sometime.";
                 }
             }
         }    
@@ -66,7 +68,10 @@ if(isset($_POST['btnsubmit']))
 <section id="intro" class="clearfix">
 <div class="container">
 <div class="row">
-	<div class="col-3"></div>
+	<div class="col-3">
+
+
+  </div>
 	 <div class="col-6">
     <div class="card">
             <h5 class="card-header  text-center lead text-muted">Join us! Find your study here.</h5>
@@ -77,6 +82,14 @@ if(isset($_POST['btnsubmit']))
             <h3 class="card-title text-center">Signup</h3>
             <form action="" method="POST" onsubmit="return validateForm()" name="Form">
             <div class="form-group">
+
+            <?php if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+                        <div class="success-message" style="margin-bottom: 20px;font-size: 20px;color: green;"><?php echo $_SESSION['success_message']; ?></div>
+                        <?php
+                        unset($_SESSION['success_message']);
+                    }
+                    ?>
+                    
                   <input type="text" class="form-control" id="name" placeholder="Name" name="name">
                 </div>
                 <div class="form-group">
@@ -88,7 +101,9 @@ if(isset($_POST['btnsubmit']))
                 <div class="form-group">
                   <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                 </div>
-               
+               <div class="form-group">
+               <input type="checkbox" onclick="myFunction2()">  Show Password
+                  </div>
                 <button type="submit" class="btn btn-primary btn-block" name="btnsubmit">Register</button>
               <br>
               Are you already registered? <a href="../login/login.php">Login Now</a>
@@ -101,6 +116,16 @@ if(isset($_POST['btnsubmit']))
 </section>
 
   <br>
+  <script type="text/javascript">
+    function myFunction2() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+    </script>
   <!--==========================
     Footer
   ============================-->
@@ -158,3 +183,5 @@ if(isset($_POST['btnsubmit']))
       
     </div>
   </footer> -->
+
+ 

@@ -94,16 +94,25 @@ if(isset($_POST['but_submit']))
             </div>
 
             <div class="md-form">
+              
               <input type="password" class="form-control validate"
-              id="password"
-              name="password"
+              id="myInput"
+              name="password" 
               placeholder="Your Password">
-              <label data-error="wrong" data-success="right"></label>
 
+              <label data-error="wrong" data-success="right"></label>
+              <input type="checkbox" onclick="myFunction()">  Show Password
               <!-- <p class="font-small blue-text d-flex justify-content-end"><a href="#" class="blue-text ml-1">Forgot Password?</a></p> -->
             </div>
 
+
+            <div class="md-form">
+            <input type="checkbox" id="myCheck" name="accept" value="yes" required> 
+            "I agree to the Terms and Conditions" or "I agree to the Privacy Policy"
+            </div>
+
           <div class="text-center mb-3">
+            
             <button type="submit" class="btn btn-primary btn-block z-depth-1a" id="but_submit" name="but_submit" >Sign in</button>
           </div>
           <span>Don't have an account? <a href="../signup/signup.php" >Create a free account</span>
@@ -180,3 +189,21 @@ if(isset($_POST['but_submit']))
       
     </div>
   </footer> -->
+
+  <script type="text/javascript">
+    function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+    </script>
+    
+    <script>
+function myFunction1() {
+  var x = document.getElementById("myCheck").required;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>

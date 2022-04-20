@@ -161,6 +161,21 @@ include "./admin/research/functions/Message.func.php";
     </div>
   </section>
   
+  <div class="col-md-12">
+<?php 
+    if(isset($_SESSION['status']))
+    {
+      ?>
+       <div class="container">
+        
+    </div>
+        <?php 
+      unset ($_SESSION['status']);
+    }
+?>
+</div>
+
+
   <!-- #intro -->
 
   
