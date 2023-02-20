@@ -27,7 +27,7 @@ This project is used by the following companies:
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/yepimthatkid/CustomLandingPage/blob/main/resource/img/home.png)
 
 
 ## Authors
