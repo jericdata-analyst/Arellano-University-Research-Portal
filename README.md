@@ -29,6 +29,14 @@ This project is used by the following companies:
 
 ![App Screenshot](https://github.com/yepimthatkid/CustomLandingPage/blob/main/resource/img/home.png)
 
+![App Screenshot](https://github.com/yepimthatkid/CustomLandingPage/blob/main/resource/img/admin.png)
+
+![App Screenshot](https://github.com/yepimthatkid/CustomLandingPage/blob/main/resource/img/journal.png)
+
+![App Screenshot](https://github.com/yepimthatkid/CustomLandingPage/blob/main/resource/img/account.png)
+
+![App Screenshot](https://github.com/yepimthatkid/CustomLandingPage/blob/main/resource/img/author.png)
+
 
 ## Authors
 
