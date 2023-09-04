@@ -19,7 +19,7 @@ Research portals can be either public or private, with some portals requiring us
 
 ## Used By
 
-This project is used by the following companies:
+This project is used by the following department:
 
 - Arellano University Researcher and Publications Department
 
